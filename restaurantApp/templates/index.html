@@ -8,7 +8,7 @@
       <p>
         30% Off This Weekend 
       </p>
-      <a href="#" class="cta"> Book now </a>
+      <a href="{% url 'book' %}" class="cta"> Book now </a>
     </article>
   </section>
   <section>
@@ -19,9 +19,7 @@
         Our menu consists of 12-15 seasonal items based on Italian, Greek, and Turkish culture.
       </p>
       <p>
-        {%comment %}
         <a href="{% url 'menu' %}">See our new menu</a>
-        {%endcomment %}
       </p>
     </article>
     <article>
@@ -31,9 +29,7 @@
         Reserve your table for an Italian, Greek, and Turkish dining experience.
       </p>
       <p>
-        {%comment %}
         <a href="{% url 'book' %}">Book your table now</a>
-        {%endcomment %}
       </p>
     </article>
     <article>
