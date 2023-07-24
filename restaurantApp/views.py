@@ -19,8 +19,12 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def menu(request):
+    menu_data = Menu.objects.all()
+    return render(request, 'menu.html', {"menu": menu_data})
+
 def reservations(request):
-    date = request.GET.get('date',datetime.today().date())
+    #date = request.GET.get('date',datetime.today().date())
     bookings = Booking.objects.all()
     booking_json = serializers.serialize('json', bookings)
     return render(request, 'bookings.html',{"bookings":booking_json})
@@ -35,9 +39,7 @@ def book(request):
     return render(request, 'book.html', context)
 
 # Add your code here to create new views
-def menu(request):
-    menu_data = Menu.objects.all()
-    return render(request, 'menu.html', {"menu": menu_data})
+
 
 
 def display_menu_item(request, pk=None): 
